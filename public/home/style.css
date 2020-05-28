@@ -1,0 +1,114 @@
+.navigation {
+  background: #206fe3;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: larger;
+}
+.bg-dark {
+  color: white;
+}
+.con {
+  background: rgba(206, 234, 244, 0.5) 0% 0% no-repeat padding-box;
+}
+.hero {
+  border-left: 33px;
+  padding: 10px;
+  font: 600;
+  font-size: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.head {
+  font-size: 50px;
+  font-weight: bolder;
+  color: #206fe3;
+}
+.col-md-4 {
+  width: 45%;
+  padding: 2.5%;
+}
+.col-sm-12 {
+  width: 90%;
+  padding: 5%;
+}
+/* .column
+    {
+        width: 60%;
+        border: 20px;
+        padding:20%;
+    } */
+.intro {
+  font-size: 24px;
+  font-weight: 300;
+  color: #7f7f7f;
+}
+.row button {
+  margin: 10px;
+  text-align: center;
+  width: 50%;
+  height: 15%;
+  font-size: 24px;
+}
+.second {
+  background-color: #206fe3;
+  border-radius: 5px;
+  margin-top: 200px;
+}
+.first {
+  padding: 50px;
+  padding-left: 100px;
+}
+.pic {
+  text-align: center;
+  color: aliceblue;
+  font-size: 24px;
+  font-weight: bold;
+}
+.but:hover {
+  background-color: aliceblue;
+  color: #206fe3;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: black;
+}
+.but {
+  background: rgb(41, 40, 40);
+  color: aliceblue;
+  text-align: center;
+}
+.third {
+  background-color: #eceaea;
+  font-style: italic;
+  font-size: large;
+}
+section {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.foot {
+  padding: 0;
+  margin: 0;
+  margin-bottom: -10px;
+}
+.forth {
+  font-size: 56px;
+  font-weight: bolder;
+}
+.forth button {
+  height: 100%;
+  border-radius: 5px;
+}
+.forth button:hover {
+  background: black;
+  color: white;
+}
+.but a {
+  color: white;
+}
+.but a:hover {
+  color: #206fe3;
+}

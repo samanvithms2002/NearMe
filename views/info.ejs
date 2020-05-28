@@ -1,0 +1,115 @@
+<%- include ('./partials/header')-%>
+<h1><%= data2.result.name %></h1>
+<li>Phone Number : <%= data2.result.formatted_phone_number %></li>
+<li>Website :<a href="<%= data2.result.website %>">Click here</a></li>
+<li>Status : <%= data2.result.business_status %></li>
+<li>
+  Distance : <%= data.resourceSets[0].resources[0].results[0].travelDistance %>
+  Km
+</li>
+<li>
+  Time To Travel : <%=
+  data.resourceSets[0].resources[0].results[0].travelDuration %> Minutes
+</li>
+<li>Address : <%= data2.result.vicinity %></li>
+<p>To location on maps : <a href="<%= data2.result.url %>">Click here</a></p>
+<p>Rating : <%= data2.result.rating %></p>
+<h3>Reviews</h3>
+<% if(data2.result.reviews != null) { %> <%
+data2.result.reviews.forEach(function(rev){ %>
+<li>Author Name : <%= rev.author_name %></li>
+<p>Reviewer Rating : <%= rev.rating %></p>
+<p>Review : <%= rev.text %></p>
+<p><%=rev.relative_time_description%></p>
+<% }) %> <% }else{ %>
+<div>No reviews</div>
+<% } %>
+
+<form action="/saved" method="POST">
+  <input
+    type="text"
+    name="ad[name]"
+    value="<%= data2.result.name %>"
+    style="display: none;"
+  />
+  <input
+    type="text"
+    name="ad[phone]"
+    style="display: none;"
+    value="Phone Number : <%= data2.result.formatted_phone_number %>"
+  />
+
+  <input
+    type="text"
+    name="ad[distance]"
+    style="display: none;"
+    value=" Distance : <%= data.resourceSets[0].resources[0].results[0].travelDistance %>
+  Km"
+  />
+  <input
+    type="text"
+    name="ad[address]"
+    style="display: none;"
+    value="Address : <%= data2.result.vicinity %>"
+  />
+  <button>Add to Saved</button>
+</form>
+<form action="/favorite" method="POST">
+  <input
+    type="text"
+    name="fa[name]"
+    value="<%= data2.result.name %>"
+    style="display: none;"
+  />
+  <input
+    type="text"
+    name="fa[phone]"
+    style="display: none;"
+    value="Phone Number : <%= data2.result.formatted_phone_number %>"
+  />
+
+  <input
+    type="text"
+    name="fa[distance]"
+    style="display: none;"
+    value=" Distance : <%= data.resourceSets[0].resources[0].results[0].travelDistance %>
+  Km"
+  />
+  <input
+    type="text"
+    name="fa[address]"
+    style="display: none;"
+    value="Address : <%= data2.result.vicinity %>"
+  />
+  <button>Add to Favorites</button>
+</form>
+<form action="/star" method="POST">
+  <input
+    type="text"
+    name="fa[name]"
+    value="<%= data2.result.name %>"
+    style="display: none;"
+  />
+  <input
+    type="text"
+    name="fa[phone]"
+    style="display: none;"
+    value="Phone Number : <%= data2.result.formatted_phone_number %>"
+  />
+
+  <input
+    type="text"
+    name="fa[distance]"
+    style="display: none;"
+    value=" Distance : <%= data.resourceSets[0].resources[0].results[0].travelDistance %>
+  Km"
+  />
+  <input
+    type="text"
+    name="fa[address]"
+    style="display: none;"
+    value="Address : <%= data2.result.vicinity %>"
+  />
+  <button>Add to Starred locations</button>
+</form>
+<%- include ('./partials/footer')-%>

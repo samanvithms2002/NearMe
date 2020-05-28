@@ -1,0 +1,25 @@
+<%- include ('../partials/header')-%>
+<h1>Starred Locations</h1>
+<% starplace.forEach(function(place){ %> <% if( currentUser &&
+place.author.id.equals(currentUser._id)){ %>
+<h2><%= place.name %></h2>
+<li><%= place.phone %></li>
+<li><%= place.distance %></li>
+<li><%= place.address %></li>
+<li><%= place.comment %></li>
+<a href="/star/<%=place._id %>">More info</a><br /><br />
+<form action="/star/<%=place._id%>?_method=DELETE" method="POST">
+  <button>DELETE</button>
+</form>
+<% } %> <% }); %>
+<br /><br />
+<a href="/">Home</a>
+<a href="/search">Go to Search</a>
+<br />
+<a href="/saved">Go to Saved Place</a>
+<br />
+<a href="/favorite">Go to Favorite Place</a>
+<br />
+<a href="/star">Go to Starred Place</a>
+<br />
+<%- include ('../partials/footer')-%>

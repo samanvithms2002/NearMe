@@ -1,0 +1,35 @@
+<%- include ('./partials/header')-%>
+<h1>This is results page</h1>
+<% data.results.forEach(function(res){ %>
+<li><%= res.name %></li>
+<li><%=res.rating %></li>
+<li><%= res.vicinity %></li>
+<li><%= res.business_status %></li>
+<li>
+  <%= ( res.user_ratings_total == null)? "No reviews" : res.user_ratings_total
+  %>
+</li>
+
+<!-- <script>
+  data.results.forEach((res) => {
+    console.log(res.user_ratings_total);
+  });
+  document.querySelector(".rating").value=;
+</script> -->
+
+<% var la = res.geometry.location.lat; %> <% var lo = res.geometry.location.lng;
+%> <% var id = res.place_id; %>
+
+<form action="/info" method="GET">
+  <input type="text" value="<%= la %>" style="display: none;" name="latitude" />
+  <input
+    type="text"
+    value="<%= lo %>"
+    style="display: none;"
+    name="longitude"
+  />
+  <input type="text" value="<%= id %>" style="display: none;" name="placeId" />
+  <button>More Info</button>
+</form>
+<li>----------</li>
+<% }) %> <%- include ('./partials/footer')-%>

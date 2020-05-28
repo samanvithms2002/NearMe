@@ -1,0 +1,25 @@
+<%- include ('../partials/header')-%>
+<h1>Favorite locations</h1>
+<% favplace.forEach(function(place){ %> <% if( currentUser &&
+place.author.id.equals(currentUser._id)){ %>
+<h2><%= place.name %></h2>
+<li><%= place.phone %></li>
+<li><%= place.distance %></li>
+<li><%= place.address %></li>
+
+<a href="/favorite/<%=place._id %>">More info</a><br /><br />
+<form action="/favorite/<%=place._id%>?_method=DELETE" method="POST">
+  <button>DELETE</button>
+</form>
+<% } %> <% }); %>
+<br /><br />
+<a href="/">Home</a>
+<a href="/search">Go to Search</a>
+<br />
+<a href="/saved">Go to Saved Place</a>
+<br />
+<a href="/favorite">Go to Favorite Place</a>
+<br />
+<a href="/star">Go to Starred Place</a>
+<br />
+<%- include ('../partials/footer')-%>

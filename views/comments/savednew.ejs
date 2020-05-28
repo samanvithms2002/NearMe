@@ -1,0 +1,8 @@
+<%- include ('../partials/header')-%>
+<h1>Add new Comment to <%=savedplace.name %></h1>
+<form action="/saved/<%=savedplace._id%>/comments" method="POST">
+  <input type="text" name="comment[text]" placeholder="text" />
+
+  <button>Submit!!</button>
+</form>
+<%- include ('../partials/footer')-%>

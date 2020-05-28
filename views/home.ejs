@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Location</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/home/style.css" />
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <div class="navigation">
+      <div
+        class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom shadow-sm"
+      >
+        <h5 class="my-0 mr-md-auto font-weight-normal">Location</h5>
+        <% if(!currentUser){ %>
+        <nav class="my-2 my-md-0 mr-md-3">
+          <a class="p-2 text-light" href="/login">Login</a>
+
+          <a class="p-2 text-light" href="#">Contact</a>
+        </nav>
+        <a class="btn btn-outline-dark bg-dark" href="/register">Sign up</a>
+        <% } else{ %>
+
+        <nav class="my-2 my-md-0 mr-md-3">
+          <a class="p-2 text-light" href="/logout">Logout</a>
+
+          <a class="p-2 text-light" href="#">Contact</a>
+        </nav>
+
+        <% } %>
+      </div>
+    </div>
+    <!-- navbar -->
+
+    <!-- hero header -->
+    <div class="container-fluid con">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 columns">
+          <img src="/home/homeimages/Group 28.png" alt="" />
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-12 columns">
+          <div class="row head">Something</div>
+          <div class="row intro">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate,
+            quae? Aspernatur cumque adipisci, quis eum omnis quo, incidunt
+            corrupti ipsum esse ducimus provident doloremque accusantium. Iusto
+            soluta reprehenderit sint nulla.
+          </div>
+          <div class="row intro">
+            <button class="btn btn-primary" type="submit">
+              <a
+                href="/search"
+                style="color: white; text-decoration: none; display: block;"
+                >Get started!</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- hero header -->
+
+    <!-- second design -->
+    <div class="container-fluid second">
+      <div class="row pagination-centered first">
+        <div class="col-lg-4 col-md-4 col-sm-12 pic text-center">
+          <div class="row">
+            <img
+              src="/home/homeimages/star@2x.png"
+              alt=""
+              width="100px"
+              height="100px"
+            />
+          </div>
+          <br />
+          <div class="row text-center">MY STARRED</div>
+          <br />
+          <div class="row">
+            <button class="btn btn-primary but" type="submit">
+              <a href="/star" style="display: block; text-decoration: none;"
+                >View</a
+              >
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 pic text-center">
+          <div class="row">
+            <img
+              src="/home/homeimages/floppy-disc@2x.png"
+              alt=""
+              width="100px"
+              height="100px"
+            />
+          </div>
+          <br />
+          <div class="row text-center">
+            MY SAVED
+          </div>
+          <br />
+          <div class="row">
+            <button class="btn btn-primary but" type="submit">
+              <a href="/saved" style="display: block; text-decoration: none;"
+                >View</a
+              >
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 pic text-center">
+          <div class="row">
+            <img
+              src="/home/homeimages/location (1)@2x.png"
+              alt=""
+              width="100px"
+              height="100px"
+            />
+          </div>
+          <br />
+          <div class="row text-center">MY FAVOURITES</div>
+          <br />
+          <div class="row">
+            <button class="btn btn-primary but" type="submit">
+              <a href="/favorite" style="text-decoration: none; display: block;"
+                >View</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- second design -->
+
+    <!-- developers -->
+    <div class="container-fluid third">
+      <div class="row">
+        <div class="col-md-6 col-sm-12 col-lg-6">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 col-lg-6">
+              <img src="/home/homeimages/Layer 0.svg" alt="" />
+            </div>
+            <div class="col-md-6 col-sm-12 col-lg-6">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+              obcaecati accusantium ut, error nihil quis perferendis cumque
+              accusamus minus praesentium sit dignissimos laboriosam labore ipsa
+              hic omnis soluta aperiam deleniti.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12 col-lg-6">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 col-lg-6">
+              <img
+                src="/home/homeimages/00000PORTRAIT_00000_BURST20181104112945090 (2) (1).svg"
+                alt=""
+              />
+            </div>
+            <div class="col-md-6 col-sm-12 col-lg-6">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              atque unde facilis corrupti, consectetur fuga numquam ipsum! Saepe
+              dolore, dolor nisi quae dicta blanditiis totam modi quis aperiam!
+              Perspiciatis, atque.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- developers -->
+
+    <!-- footer -->
+    <div class="container-fluid foot">
+      <section>
+        <div class="container forth">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 col-lg-6">Sign Up for Free</div>
+
+            <div class="col-md-6 col-sm-12 col-lg-6">
+              <button class="btn btn-primary but" type="submit">
+                <a
+                  href="/favorite"
+                  style="text-decoration: none; display: block;"
+                  >View</a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="70%"
+          height="100%"
+          viewBox="0 0 1917.848 703.373"
+        >
+          <defs>
+            <style>
+              .cls-1 {
+                fill: #373636;
+                stroke: #707070;
+              }
+            </style>
+          </defs>
+          <path
+            id="Path_242"
+            data-name="Path 242"
+            class="cls-1"
+            d="M0,2063s174.417,258.443,458.064,293.679,414.019-27.6,766.963,0,691.206,407.559,691.206,407.559H0Z"
+            transform="translate(0.5 -2061.365)"
+          />
+        </svg>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!-- <h1>Login</h1>
+<form action="/login" method="POST">
+  <input type="text" name="username" placeholder="username" />
+  <input type="password" name="password" placeholder="password" />
+  <button>Submit!!</button>
+</form> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login/SignUp</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/login/login.css" />
+    <style>
+      body {
+        background: url(/login/loginimages/login.svg) no-repeat center center
+          fixed;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="login-page">
+      <div class="form">
+        <!-- <form class="register-form">
+          <input type="text" placeholder="name" />
+          <input type="password" placeholder="password" />
+          <input type="text" placeholder="email address" />
+          <button>create</button>
+          <p class="message">Already registered? <a href="#">Sign In</a></p>
+        </form> -->
+        <h1 style="color: #e75480; margin-bottom: 10%;">LOG-IN</h1>
+        <form class="login-form" action="/login" method="POST">
+          <input type="text" name="username" placeholder="username" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            required
+          />
+          <button>login</button>
+          <p class="message">
+            Not registered? <a href="/register">Create an account</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
