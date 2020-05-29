@@ -59,7 +59,7 @@ router.get("/info", function (req, res) {
   // var tu = `&timeUnit=${req.query.time}`;
   // var lan = `&language=${req.query.language2}`;
   var bing = `https://dev.virtualearth.net/REST/v1/Routes/DistanceMatrix?origins=17.3497,78.5554&destinations=${la},${lo}&travelMode=driving&key=AqV6iXjGxwkbNMekEjWea8TJM4RpGGbUbXefcs2IgtPrwDRO9zqVLlJnsdoh-kMP `;
-  var google = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${id}&fields=name,rating,formatted_phone_number,icon,opening_hours,business_status,reviews,website,vicinity,url&key=AIzaSyD5_oNCvkLyUVj_5-12vnkSRrIgWCalN2c`;
+  var google = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${id}&fields=name,rating,formatted_phone_number,icon,opening_hours,business_status,reviews,website,vicinity,url&key=AIzaSyBvAG99dgJipXNBMmh-gk-DUT3wYtE_58g`;
   request(bing, function (err2, response2, body2) {
     if (!err2 && response2.statusCode == 200) {
       data = JSON.parse(body2);
