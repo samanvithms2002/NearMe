@@ -5,14 +5,11 @@
 <li><%= place.phone %></li>
 <li><%= place.distance %></li>
 <li><%= place.address %></li>
-<p><em>Submitted By :</em> <%=place.author.username %></p>
 
 <p>
   <button><a href="/saved/<%=place._id%>/comments/new">ADD COMMENT</a></button>
 </p>
 <% place.comments.forEach(function(comment){ %>
-<strong><p><%=comment.author.username %></p></strong>
 
 <p><%=comment.text %></p>
-<% }) %>
-<%- include ('../partials/footer')-%>
+<% }) %> <%- include ('../partials/footer')-%>

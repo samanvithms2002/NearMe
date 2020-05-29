@@ -6,11 +6,7 @@
 <li><%= place.distance %></li>
 <li><%= place.address %></li>
 
-<p><em>Submitted By :</em> <%=place.author.username %></p>
 <% place.comments.forEach(function(comment){ %>
-<strong>
-  <p><%=comment.author.username %></p>
-</strong>
 
 <p><%=comment.text %></p>
 <% }) %>

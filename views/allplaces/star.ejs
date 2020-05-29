@@ -6,7 +6,6 @@ place.author.id.equals(currentUser._id)){ %>
 <li><%= place.phone %></li>
 <li><%= place.distance %></li>
 <li><%= place.address %></li>
-<li><%= place.comment %></li>
 <a href="/star/<%=place._id %>">More info</a><br /><br />
 <form action="/star/<%=place._id%>?_method=DELETE" method="POST">
   <button>DELETE</button>
