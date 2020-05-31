@@ -3,6 +3,10 @@ var router = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
 var request = require("request");
+require("dotenv").config();
+
+var key2 = process.env.KEY2;
+var key3 = process.env.KEY3;
 
 router.get("/", function (req, res) {
   res.render("home", { currentUser: req.user });
@@ -18,29 +22,20 @@ router.get("/results", function (req, res) {
   var long = req.query.longitude;
   var radius = req.query.radius;
   var type = req.query.type;
+  radius = Number(radius) * 1000;
+
   // var min = req.query.minprice;
   // var max = req.query.maxprice;
   var lang = `&language=${req.query.language}`;
-  var key = req.query.keyword;
-  var key2 = key;
-  if (key2.length == 0) {
-    key = "";
-  } else {
-    key = `&keyword=${req.query.keyword}`;
-  }
-
-  // if (min == -1) {
-  //   min = "";
+  // var key = req.query.keyword;
+  // var key2 = key;
+  // if (key2.length == 0) {
+  //   key = "";
   // } else {
-  //   min = `&minprice=${req.query.minprice}`;
-  // }
-  // if (max == -1) {
-  //   max = "";
-  // } else {
-  //   max = `&maxprice=${req.query.maxprice}`;
+  //   key = `&keyword=${req.query.keyword}`;
   // }
 
-  var link = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=${radius}&type=${type}${lang}${key}&key=AIzaSyBTspfqr0WIn6xcem8WFxCB58b6sIH98Oc`;
+  var link = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=${radius}&type=${type}${lang}&key=${key2}`;
   //maps.googleapis.com/maps/api/place/nearbysearch/json?location=17.3457,78.5522&radius=1500&minprice=1&opennow&type=restaurant&key=AIzaSyA-pH7q9qKc1hNmXFTFuiFoXMJRlFCDD7s
   request(link, function (err, response, body) {
     if (!err && response.statusCode == 200) {
@@ -58,8 +53,8 @@ router.get("/info", function (req, res) {
   // var du = `&distanceUnit=${req.query.distance}`;
   // var tu = `&timeUnit=${req.query.time}`;
   // var lan = `&language=${req.query.language2}`;
-  var bing = `https://dev.virtualearth.net/REST/v1/Routes/DistanceMatrix?origins=17.3497,78.5554&destinations=${la},${lo}&travelMode=driving&key=AqV6iXjGxwkbNMekEjWea8TJM4RpGGbUbXefcs2IgtPrwDRO9zqVLlJnsdoh-kMP `;
-  var google = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${id}&fields=name,rating,formatted_phone_number,icon,opening_hours,business_status,reviews,website,vicinity,url&key=AIzaSyBTspfqr0WIn6xcem8WFxCB58b6sIH98Oc`;
+  var bing = `https://dev.virtualearth.net/REST/v1/Routes/DistanceMatrix?origins=17.3497,78.5554&destinations=${la},${lo}&travelMode=driving&key=${key3} `;
+  var google = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${id}&fields=name,rating,formatted_phone_number,icon,opening_hours,business_status,reviews,website,vicinity,url&key=${key2}`;
   request(bing, function (err2, response2, body2) {
     if (!err2 && response2.statusCode == 200) {
       data = JSON.parse(body2);
@@ -90,7 +85,7 @@ router.post("/register", function (req, res) {
       return res.render("register");
     }
     passport.authenticate("local")(req, res, function () {
-      res.redirect("/saved");
+      res.redirect("/");
     });
   });
 });

@@ -1,0 +1,78 @@
+@import url(//db.onlinewebfonts.com/c/f234dcc321facfb00cf461e8e1e886eb?family=FrontageW00-Bold);
+@font-face {font-family: "FrontageW00-Bold"; src: url("//db.onlinewebfonts.com/t/f234dcc321facfb00cf461e8e1e886eb.eot"); src: url("//db.onlinewebfonts.com/t/f234dcc321facfb00cf461e8e1e886eb.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/f234dcc321facfb00cf461e8e1e886eb.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/f234dcc321facfb00cf461e8e1e886eb.woff") format("woff"), url("//db.onlinewebfonts.com/t/f234dcc321facfb00cf461e8e1e886eb.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/f234dcc321facfb00cf461e8e1e886eb.svg#FrontageW00-Bold") format("svg"); }@font-face {font-family: "FrontageW00-3D"; src: url("//db.onlinewebfonts.com/t/7fe6ebc7b32f1481c637be4cb2463e6c.eot"); src: url("//db.onlinewebfonts.com/t/7fe6ebc7b32f1481c637be4cb2463e6c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/7fe6ebc7b32f1481c637be4cb2463e6c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/7fe6ebc7b32f1481c637be4cb2463e6c.woff") format("woff"), url("//db.onlinewebfonts.com/t/7fe6ebc7b32f1481c637be4cb2463e6c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/7fe6ebc7b32f1481c637be4cb2463e6c.svg#FrontageW00-3D") format("svg"); }
+@import url(//db.onlinewebfonts.com/c/9475d6a0b79c164f9f605673714e75d9?family=Circular+Std+Medium);
+@font-face {font-family: "Circular Std Medium"; src: url("//db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.eot"); src: url("//db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.woff") format("woff"), url("//db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.svg#Circular Std Medium") format("svg"); }
+body
+{
+    background-color: #EAF9FF
+}
+.container
+{
+    margin-top: 3%;
+}
+.row
+{
+    background-color: #FFFFFF;
+    border-radius: 8px;
+}
+
+.info
+{
+    padding: 2%;
+  border: 1%;
+    
+   
+    
+}
+.first
+{
+    width: 80%;
+    margin-left: 20px;
+}
+.name
+{
+    font-family: "FrontageW00-Bold";
+    text-transform: uppercase;
+    font-size: larger;
+}
+.heading
+{
+font-family: "FrontageW00-Bold";
+color: rgb(18, 85, 97);
+text-transform: uppercase;  
+text-align: center;    
+}
+hr{
+border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+.text
+{
+    font-family: "Circular Std Medium";
+    color: #726E6E;
+}
+
+.inside
+{
+    margin-top: 20px;
+}
+.button
+{
+    width: 100%;
+   margin: auto;
+   text-align: center;
+    
+}
+button
+{
+    width: 100%;
+    text-align: center;
+    background-color: #4E87DC;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family:"Circular Std Medium";
+}
+

@@ -1,25 +1,97 @@
-<%- include ('../partials/header')-%>
-<h1>Favorite locations</h1>
-<% favplace.forEach(function(place){ %> <% if( currentUser &&
-place.author.id.equals(currentUser._id)){ %>
-<h2><%= place.name %></h2>
-<li><%= place.phone %></li>
-<li><%= place.distance %></li>
-<li><%= place.address %></li>
+<!DOCTYPE html>
+<html lang="en">
+   
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="/fav/style.css">
+  <link href="//db.onlinewebfonts.com/c/f234dcc321facfb00cf461e8e1e886eb?family=FrontageW00-Bold" rel="stylesheet"
+    type="text/css" />
+</head>
+<link href="//db.onlinewebfonts.com/c/9475d6a0b79c164f9f605673714e75d9?family=Circular+Std+Medium" rel="stylesheet"
+  type="text/css" />
+</head>
 
-<a href="/favorite/<%=place._id %>">More info</a><br /><br />
-<form action="/favorite/<%=place._id%>?_method=DELETE" method="POST">
-  <button>DELETE</button>
-</form>
-<% } %> <% }); %>
-<br /><br />
-<a href="/">Home</a>
-<a href="/search">Go to Search</a>
-<br />
-<a href="/saved">Go to Saved Place</a>
-<br />
-<a href="/favorite">Go to Favorite Place</a>
-<br />
-<a href="/star">Go to Starred Place</a>
-<br />
-<%- include ('../partials/footer')-%>
+<body>
+  <div class="container one" style="background-color:#008ADF;">
+    <div class="row">
+      <div class="col-md-4"><img src="/fav/favimages/favourite.svg" alt="" width="75%" height="75%"></div>
+      <div class="col-md-8 title" style="display: inline-block;">
+        <h3 style="font-size: 300%;">My Favorite Places</h3>
+      </div>
+    </div>
+  </div>
+  <% favplace.forEach(function(place){ %> <% if( currentUser &&
+  place.author.id.equals(currentUser._id)){ %>
+  <div class="container card">
+    <div class="row">
+      <div class="col-md-4 col-sm-12 info"><img src="/fav/favimages/search-background@2x (1).png" alt="" width="100%"
+        
+          height="50%"></div>
+
+      <div class="col-md-8 col-sm-12 col-xs-12 info ">
+        <div class="row first">
+          <h4 class="name"><%= place.name %>
+            <br>
+            <% var rat = Math.floor(Number(place.rating)) %>
+            
+            <% for(var i=0;i < rat ; i++ ){%>
+            <img src="/results/resultsimages/stars.svg" alt="" width="15px" height="15px">
+            <% } %>
+          </h4>
+        </div>
+        <div class="row inside">
+          <div class="col-md text"><img src="/fav/favimages/location.svg" alt="" width="25px" height="25px">
+            <%= place.address %></div>
+        </div>
+        <div class="row inside">
+          <div class="col-md text"><img src="/fav/favimages/phone.svg" alt="" width="20px" height="20px">
+            <%= place.phone %></div>
+
+        </div>
+        <div class="row inside">
+          <div class="col-md col-sm-6 col-xs-12 text column">
+            <div class="row icon d-inline-flex p-2"> <img src="/more/moreimages/map.svg" alt="" width="25px" height="25px"><a
+                href="">
+                <div class="data"><a href="<%= place.url %>">Open in Maps</a></div>
+              </a></div>
+            
+        </div>
+</div>
+
+        <hr>
+        <div class="row button">
+          <div class="col-md">
+            <form action="/info" method="GET">
+              
+              <button>
+              <a  style="color: white; text-decoration: none;" href="/favorite/<%=place._id %>">More info</a>
+              </button>
+            </form>
+            <br>
+            
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <% } %> <% }); %>
+  <div class="card">
+    <div class="row">
+      <div class="col-md"><a href="/">Home</a></div>
+      <div class="col-md"><a href="/search">Go to Search</a></div>
+      <div class="col-md"><a href="/saved">Go to Saved Place</a></div>
+      <div class="col-md"><a href="/favorite">Go to Favorite Place</a></div>
+      <div class="col-md"><a href="/star">Go to Starred Place</a></div>
+
+    </div>
+  </div>
+</body>
+
+</html>
+

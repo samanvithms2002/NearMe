@@ -1,0 +1,148 @@
+@import url(//db.onlinewebfonts.com/c/f234dcc321facfb00cf461e8e1e886eb?family=FrontageW00-Bold);
+@font-face {
+  font-family: "FrontageW00-Bold";
+  src: url("//db.onlinewebfonts.com/t/f234dcc321facfb00cf461e8e1e886eb.eot");
+  src: url("//db.onlinewebfonts.com/t/f234dcc321facfb00cf461e8e1e886eb.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/f234dcc321facfb00cf461e8e1e886eb.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/f234dcc321facfb00cf461e8e1e886eb.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/f234dcc321facfb00cf461e8e1e886eb.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/f234dcc321facfb00cf461e8e1e886eb.svg#FrontageW00-Bold")
+      format("svg");
+}
+@font-face {
+  font-family: "FrontageW00-3D";
+  src: url("//db.onlinewebfonts.com/t/7fe6ebc7b32f1481c637be4cb2463e6c.eot");
+  src: url("//db.onlinewebfonts.com/t/7fe6ebc7b32f1481c637be4cb2463e6c.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/7fe6ebc7b32f1481c637be4cb2463e6c.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/7fe6ebc7b32f1481c637be4cb2463e6c.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/7fe6ebc7b32f1481c637be4cb2463e6c.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/7fe6ebc7b32f1481c637be4cb2463e6c.svg#FrontageW00-3D")
+      format("svg");
+}
+@import url(//db.onlinewebfonts.com/c/9475d6a0b79c164f9f605673714e75d9?family=Circular + Std + Medium);
+@font-face {
+  font-family: "Circular Std Medium";
+  src: url("//db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.eot");
+  src: url("//db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.svg#Circular Std Medium")
+      format("svg");
+}
+body {
+  background-color: #eaf9ff;
+}
+
+.row .col-md-6 img {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.container {
+  margin-top: 3%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.row {
+  /* background-color: #FFFFFF; */
+  overflow: hidden;
+  word-wrap: break-word;
+  height: auto;
+  margin: 5%;
+}
+
+.info {
+  padding: 2%;
+
+  display: inline-block;
+}
+.first {
+  width: 90%;
+  margin-left: 20px;
+}
+.name {
+  font-family: "FrontageW00-Bold";
+  text-transform: uppercase;
+  font-size: larger;
+}
+.heading {
+  font-family: "FrontageW00-Bold";
+  color: rgb(18, 85, 97);
+  text-transform: uppercase;
+  text-align: center;
+}
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+.text {
+  font-family: "Circular Std Medium";
+  color: #726e6e;
+}
+
+.inside {
+  margin-top: 20px;
+}
+.button {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+.phone {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.column {
+  padding-left: 5px;
+  margin-bottom: 2px;
+}
+.data {
+  padding: 5px;
+}
+.review {
+  padding-left: 2px;
+  padding-bottom: 2px;
+}
+button {
+  background-color: #008adf;
+  color: white;
+  border: none;
+}
+.one {
+  background-color: rgb(0, 6, 10);
+}
+h3 {
+  font-family: "FrontageW00-Bold";
+  color: white;
+}
+.card {
+  border: none;
+}
+.delete {
+  background-color: white;
+}

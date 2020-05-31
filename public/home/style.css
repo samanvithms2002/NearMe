@@ -112,3 +112,12 @@ section {
 .but a:hover {
   color: #206fe3;
 }
+.images
+{
+  padding-top: 2%;
+}
+.images img
+{
+  margin-left: 20px;
+}
+

@@ -11,6 +11,7 @@ var Fav = require("./models/fav");
 var Star = require("./models/star");
 var Comment = require("./models/comment");
 var seedDB = require("./seed");
+require("dotenv").config();
 
 var commentRoutes = require("./routes/comments");
 var savedRoutes = require("./routes/saved");
@@ -22,8 +23,10 @@ var starComments = require("./routes/starcomments");
 
 User = require("./models/user");
 
+var key1 = process.env.KEY1;
+
 mongoose.connect(
-  "mongodb+srv://admin-sam:test123@cluster0-8yofu.mongodb.net/GPI_10"
+  `mongodb+srv://admin-sam:${key1}@cluster0-8yofu.mongodb.net/GPI_10`
 );
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));

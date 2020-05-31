@@ -3,8 +3,11 @@ var mongoose = require("mongoose");
 var gpiSchema = new mongoose.Schema({
   name: String,
   phone: String,
-  distance: String,
+  status: String,
   address: String,
+  rating: String,
+  url: String,
+
   author: {
     id: {
       type: mongoose.Schema.Types.ObjectId,

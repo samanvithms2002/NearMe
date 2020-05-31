@@ -1,35 +1,73 @@
-<%- include ('./partials/header')-%>
-<h1>This is results page</h1>
-<% data.results.forEach(function(res){ %>
-<li><%= res.name %></li>
-<li><%=res.rating %></li>
-<li><%= res.vicinity %></li>
-<li><%= res.business_status %></li>
-<li>
-  <%= ( res.user_ratings_total == null)? "No reviews" : res.user_ratings_total
-  %>
-</li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/results/results.css">
+    <link href="//db.onlinewebfonts.com/c/f234dcc321facfb00cf461e8e1e886eb?family=FrontageW00-Bold" rel="stylesheet" type="text/css"/></head>
+    <link href="//db.onlinewebfonts.com/c/9475d6a0b79c164f9f605673714e75d9?family=Circular+Std+Medium" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <h1 class="heading">Results</h1>
+    <% data.results.forEach(function(res){ %>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 info"><img src="/results/resultsimages/search-background@2x.png" alt="" width="100%" height="100%"></div>
+            
+            <div class="col-md-8 col-sm-12 col-xs-12 info ">
+                <div class="row first"><h4  class="name"><%= res.name %>
+                    
+                <% var rat = Math.floor(Number(res.rating)) %>
+                <br><br>
+                <% for(var i=0;i < rat ; i++ ){%>
+                <img src="/results/resultsimages/stars.svg" alt="" width="15px" height="15px">
+                <% } %>
+                
+                </h4></div>
+                <div class="row inside">
+                    <div class="col-md text"><img src="/results/resultsimages/location.svg" alt="" width="25px" height="25px"> Location  :<%= res.vicinity %></div>
+                </div>
+                <div class="row inside">
+                    <div class="col-md text"><img src="/results/resultsimages/review.svg" alt="" width="20px" height="20px"> No of Reviews :<%= ( res.user_ratings_total == null)? "No Reviews" : res.user_ratings_total%></div>
 
-<!-- <script>
-  data.results.forEach((res) => {
-    console.log(res.user_ratings_total);
-  });
-  document.querySelector(".rating").value=;
-</script> -->
-
+                </div>
+                <div class="row inside">
+                   <div class="col-md text"> <img src="/results/resultsimages/status.svg" alt="" width="25px" height="25px"> Business Status :<%= res.business_status %></div>
+                </div>
+                <hr>
+                
 <% var la = res.geometry.location.lat; %> <% var lo = res.geometry.location.lng;
 %> <% var id = res.place_id; %>
+                <div class="row button">
+                    <form action="/info" method="GET">
+                        <input type="text" value="<%= la %>" style="display: none;" name="latitude" />
+                        <input
+                          type="text"
+                          value="<%= lo %>"
+                          style="display: none;"
+                          name="longitude"
+                        />
+                        <input type="text" value="<%= id %>" style="display: none;" name="placeId" />
+                        <button>More Info</button>
+                      </form>
+                </div>  
 
-<form action="/info" method="GET">
-  <input type="text" value="<%= la %>" style="display: none;" name="latitude" />
-  <input
-    type="text"
-    value="<%= lo %>"
-    style="display: none;"
-    name="longitude"
-  />
-  <input type="text" value="<%= id %>" style="display: none;" name="placeId" />
-  <button>More Info</button>
-</form>
-<li>----------</li>
-<% }) %> <%- include ('./partials/footer')-%>
+            </div>
+            <!-- <div class="col-md-2 col-sm-6  col-xs-6 info float">
+                <div class="row">
+                <img src="public/css/stars.svg" alt="" width="15px" height="15px">
+                <img src="public/css/stars.svg" alt="" width="15px" height="15px">
+                <img src="public/css/stars.svg" alt="" width="15px" height="15px">
+                <img src="public/css/stars.svg" alt="" width="15px" height="15px">
+                <img src="public/css/stars.svg" alt="" width="15px" height="15px">
+            </div> -->
+                                       
+            </div>
+        </div>
+    </div>
+
+    <% }) %> 
+</body>
+</html>

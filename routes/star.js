@@ -45,7 +45,7 @@ router.delete("/:id", checksavedOwnership, (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      res.redirect("/favorite");
+      res.redirect("/star");
     }
   });
 });

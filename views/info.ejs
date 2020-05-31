@@ -1,115 +1,265 @@
-<%- include ('./partials/header')-%>
-<h1><%= data2.result.name %></h1>
-<li>Phone Number : <%= data2.result.formatted_phone_number %></li>
-<li>Website :<a href="<%= data2.result.website %>">Click here</a></li>
-<li>Status : <%= data2.result.business_status %></li>
-<li>
-  Distance : <%= data.resourceSets[0].resources[0].results[0].travelDistance %>
-  Km
-</li>
-<li>
-  Time To Travel : <%=
-  data.resourceSets[0].resources[0].results[0].travelDuration %> Minutes
-</li>
-<li>Address : <%= data2.result.vicinity %></li>
-<p>To location on maps : <a href="<%= data2.result.url %>">Click here</a></p>
-<p>Rating : <%= data2.result.rating %></p>
-<h3>Reviews</h3>
-<% if(data2.result.reviews != null) { %> <%
-data2.result.reviews.forEach(function(rev){ %>
-<li>Author Name : <%= rev.author_name %></li>
-<p>Reviewer Rating : <%= rev.rating %></p>
-<p>Review : <%= rev.text %></p>
-<p><%=rev.relative_time_description%></p>
-<% }) %> <% }else{ %>
-<div>No reviews</div>
-<% } %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View More</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/more/more.css">
+    <link href="//db.onlinewebfonts.com/c/f234dcc321facfb00cf461e8e1e886eb?family=FrontageW00-Bold" rel="stylesheet" type="text/css"/></head>
+    <link href="//db.onlinewebfonts.com/c/9475d6a0b79c164f9f605673714e75d9?family=Circular+Std+Medium" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-4 col-sm-12 info"><img src="/more/moreimages/search-background@2x.png" alt="" width="100%" height="100%"></div>
+            
+            <div class="col-md-8 col-sm-12 col-xs-12 info ">
+                <div class="row first">
+                <h4  class="name"><%= data2.result.name %>
+                    <br>
+                    <img src="/more/moreimages/stars.svg" alt="" width="15px" height="15px">
+                    <img src="/more/moreimages/stars.svg" alt="" width="15px" height="15px">
+                    <img src="/more/moreimages/stars.svg" alt="" width="15px" height="15px">
+                    <img src="/more/moreimages/stars.svg" alt="" width="15px" height="15px">
+                </h4>
+               <br>
+               
+                 
+               
+            </div>
+            <div class="row inside ">
+                <div class="col-md text"><img src="/more/moreimages/location.svg" alt="" width="25px" height="25px"> Location  :<%= data2.result.vicinity %></div>
+            </div>
+            <div class="row inside  ">
+                <div class="col-md text"><img src="/more/moreimages/review.svg" alt="" width="20px" height="20px"> No of Reviews :500</div>
+    
+            </div>
+            <div class="row inside ">
+               <div class="col-md text"> <img src="/more/moreimages/status.svg" alt="" width="25px" height="25px"> Business Status :<%= data2.result.business_status %></div>
+            </div>
 
-<form action="/saved" method="POST">
-  <input
-    type="text"
-    name="ad[name]"
-    value="<%= data2.result.name %>"
-    style="display: none;"
-  />
-  <input
-    type="text"
-    name="ad[phone]"
-    style="display: none;"
-    value="Phone Number : <%= data2.result.formatted_phone_number %>"
-  />
+        </div>
+        <div class="row phone column">
+            
+            <div class="col-md col-sm-6 col-xs-12 text column ">
+                <div class="row icon d-inline-flex p-2 "> <img src="/more/moreimages/phone.svg" alt=""width="25px" height="25px"><div class="data"><%= data2.result.formatted_phone_number %></div> </div>
+               <!-- <div class="row "> </div>  -->
+            </div>
+            <div class="col-md col-sm-6 col-xs-12 text column ">
+                <div class="row icon d-inline-flex p-2"> <img src="/more/moreimages/website.svg" alt=""width="25px" height="25px"> <div class="data"><a href="<%= data2.result.website %>">Click here</a> </div> </div>
+               <!-- <div >class="row"</div> -->
+                  
+            </div>
+            <div class="col-md col-sm-6 col-xs-12 text column ">
+                <div class="row icon d-inline-flex p-2 ">  <img src="/more/moreimages/distance.svg" alt="" width="25px" height="25px"> <div class="data"><%= data.resourceSets[0].resources[0].results[0].travelDuration %> min</div> </div>
+                <!-- <div class="row">  </div> -->
+            </div>
+            <div class="col-md col-sm-6 col-xs-12 text column">
+                 <div class="row icon d-inline-flex p-2"> <img src="/more/moreimages/map.svg" alt="" width="25px" height="25px"><a href=""> <div class="data"><a href="<%= data2.result.url %>">Open in Maps</a></div> </a></div>
+                 <!-- <div class="row">  </div> -->
+            </div>
+            </div>
+        
+    </div>
+    </div>
+    <div class="container">
+        <div class="row text ">
+            <div class="col-md ">
+                <img src="/more/moreimages/fav.svg" alt="" width="50px" height="50px">
+                <br>
+                <form action="/favorite" method="POST">
+ 
+                  <input
+                    type="text"
+                    name="fa[name]"
+                    value="<%= data2.result.name %>"
+                    style="display: none;"
+                  />
+                  <input
+                    type="text"
+                    name="fa[phone]"
+                    style="display: none;"
+                    value="<%= data2.result.formatted_phone_number %>"
+                  />
+                
+                  <input
+                    type="text"
+                    name="fa[rating]"
+                    style="display: none;"
+                    value="<%= data2.result.rating %>"
+                  />
+                
+                  <input
+                    type="text"
+                    name="fa[status]"
+                    style="display: none;"
+                    value="<%= data2.result.business_status %>"
+                  />
+                
+                  <input
+                    type="text"
+                    name="fa[address]"
+                    style="display: none;"
+                    value="<%= data2.result.vicinity %>"
+                  />
+                
+                  <input
+                    type="text"
+                    name="fa[url]"
+                    style="display: none;"
+                    value="<%= data2.result.url %>"
+                  />
+                  <br>
+                  <button>Add to Favorites</button>
+                </form>
+               <!-- <a href=""> Add to Favourites</a> -->
+            </div>
+            <div class="col-md">
+                  <img src="/more/moreimages/stars.svg" alt="" width="50px" height="50px"  >
+                  <br>
+                <form action="/star" method="POST">
+ 
+                  <input
+                    type="text"
+                    name="fa[name]"
+                    value="<%= data2.result.name %>"
+                    style="display: none;"
+                  />
+                  <input
+                    type="text"
+                    name="fa[phone]"
+                    style="display: none;"
+                    value="<%= data2.result.formatted_phone_number %>"
+                  />
+                
+                  <input
+                    type="text"
+                    name="fa[rating]"
+                    style="display: none;"
+                    value="<%= data2.result.rating %>"
+                  />
+                
+                  <input
+                    type="text"
+                    name="fa[status]"
+                    style="display: none;"
+                    value="<%= data2.result.business_status %>"
+                  />
+                
+                  <input
+                    type="text"
+                    name="fa[address]"
+                    style="display: none;"
+                    value="<%= data2.result.vicinity %>"
+                  />
+                
+                  <input
+                    type="text"
+                    name="fa[url]"
+                    style="display: none;"
+                    value="<%= data2.result.url %>"
+                  />
+                  <br>
+                  <button>Add to Starred </button>
+                </form>
+               <!-- <a href="">Add to Starred</a>  -->
+            </div>
+            <div class="col-md">
+                <img src="/more/moreimages/saved.svg" alt="" width="50px" height="50px">
+                <br>
+                <form action="/saved" method="POST">
+                  <input
+                    type="text"
+                    name="ad[name]"
+                    value="<%= data2.result.name %>"
+                    style="display: none;"
+                  />
+                  <input
+                    type="text"
+                    name="ad[phone]"
+                    style="display: none;"
+                    value="<%= data2.result.formatted_phone_number %>"
+                  />
+                
+                  <input
+                    type="text"
+                    name="ad[rating]"
+                    style="display: none;"
+                    value="<%= data2.result.rating %>"
+                  />
+                
+                  <input
+                    type="text"
+                    name="ad[status]"
+                    style="display: none;"
+                    value="<%= data2.result.business_status %>"
+                  />
+                
+                  <input
+                    type="text"
+                    name="ad[address]"
+                    style="display: none;"
+                    value="<%= data2.result.vicinity %>"
+                  />
+                
+                  <input
+                    type="text"
+                    name="ad[url]"
+                    style="display: none;"
+                    value="<%= data2.result.url %>"
+                  />
+                  <br>
+                  <button>Add to Saved</button>
+              <!-- <a href="" > Add to Saved</a>  -->
+              
+              </form>
+            </div>
+        </div>
+    </div>
+    <h1 class="heading">Reviews</h1>
+       
+    <% if(data2.result.reviews != null) { %> <%
+      data2.result.reviews.forEach(function(rev){ %>
+    <div class="container">
+           <div class="row">
+               <div class="col-md-2 wrap"> <img src="/more/moreimages/account.svg" alt="" width="75%" height="75%"></div>
+               <div class="col-md-10 wrap"> 
+                   <div class="row first">
+                       <div class="name"> 
+                           <h4><%= rev.author_name %>
+                               <br>
+                              <% var rat = Math.floor(Number(rev.rating)) %>
+                              
+                              <% for(var i=0;i < rat ; i++ ){%>
+                              <img src="/results/resultsimages/stars.svg" alt="" width="15px" height="15px">
+                              <% } %>
+                               <br>
+                               
+                           </h4>
+                    </div>
+                   </div>
+                   
+                   <div class="row text review">
+                    <%= rev.text %>
+                   </div>
+                   <br>
+                   <br>
+                 
+               </div>
+           </div>   
 
-  <input
-    type="text"
-    name="ad[distance]"
-    style="display: none;"
-    value=" Distance : <%= data.resourceSets[0].resources[0].results[0].travelDistance %>
-  Km"
-  />
-  <input
-    type="text"
-    name="ad[address]"
-    style="display: none;"
-    value="Address : <%= data2.result.vicinity %>"
-  />
-  <button>Add to Saved</button>
-</form>
-<form action="/favorite" method="POST">
-  <input
-    type="text"
-    name="fa[name]"
-    value="<%= data2.result.name %>"
-    style="display: none;"
-  />
-  <input
-    type="text"
-    name="fa[phone]"
-    style="display: none;"
-    value="Phone Number : <%= data2.result.formatted_phone_number %>"
-  />
+           
+             
+        </div>
+        <% }) %> <% }else{ %>
+          <div>No reviews</div>
+          <% } %>
+       
+        
 
-  <input
-    type="text"
-    name="fa[distance]"
-    style="display: none;"
-    value=" Distance : <%= data.resourceSets[0].resources[0].results[0].travelDistance %>
-  Km"
-  />
-  <input
-    type="text"
-    name="fa[address]"
-    style="display: none;"
-    value="Address : <%= data2.result.vicinity %>"
-  />
-  <button>Add to Favorites</button>
-</form>
-<form action="/star" method="POST">
-  <input
-    type="text"
-    name="fa[name]"
-    value="<%= data2.result.name %>"
-    style="display: none;"
-  />
-  <input
-    type="text"
-    name="fa[phone]"
-    style="display: none;"
-    value="Phone Number : <%= data2.result.formatted_phone_number %>"
-  />
-
-  <input
-    type="text"
-    name="fa[distance]"
-    style="display: none;"
-    value=" Distance : <%= data.resourceSets[0].resources[0].results[0].travelDistance %>
-  Km"
-  />
-  <input
-    type="text"
-    name="fa[address]"
-    style="display: none;"
-    value="Address : <%= data2.result.vicinity %>"
-  />
-  <button>Add to Starred locations</button>
-</form>
-<%- include ('./partials/footer')-%>
+       
+   
+    
+</body>
+</html>
