@@ -65,6 +65,9 @@
   color: aliceblue;
   font-size: 24px;
   font-weight: bold;
+  display: grid;
+	justify-items: center;
+  align-items: center;
 }
 .but:hover {
   background-color: aliceblue;
